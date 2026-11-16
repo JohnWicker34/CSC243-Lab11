@@ -29,4 +29,13 @@ class ScubaTank:
         return f"Tank {self.label}: {self.__bar} bar" 
 
 
+def transfer_air(source, target, amount):
+    if amount == 0:
+        print("Invalid amount")
+    else:
+        if amount < source.get_bar():
+            source.release(amount)
+            target.fill(amount)
+    
+
 
